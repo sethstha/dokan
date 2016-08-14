@@ -1,42 +1,31 @@
 <?php
 /**
- * The template for displaying product content within loops.
+ * The template for displaying product content within loops
  *
- * Override this template by copying it to yourtheme/woocommerce/content-product.php
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
  *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.5.0
+ * @version 2.6.1
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
-global $product, $woocommerce_loop;
-
-// Store loop count we're currently on
-if ( empty( $woocommerce_loop['loop'] ) ) {
-	$woocommerce_loop['loop'] = 0;
-}
-
-// Store column count for displaying the grid
-if ( empty( $woocommerce_loop['columns'] ) ) {
-	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
-}
-
+global $product;
 // Ensure visibility
-if ( ! $product || ! $product->is_visible() ) {
+if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-// Increase loop count
-$woocommerce_loop['loop']++;
 
 // Extra post classes
 $classes = array();
-if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] ) {
-	$classes[] = 'first';
-}
 
 if (is_shop() || is_product_category()) {
 	$classes[] = "col-lg-4 col-xs-6";
@@ -46,9 +35,6 @@ if (is_shop() || is_product_category()) {
 	$classes[] = "col-lg-3 col-xs-6";
 }
  
-if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
-	$classes[] = 'last';
-}
 ?>
 <li <?php post_class( $classes ); ?>>
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
@@ -61,7 +47,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail_link_start -9
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
-			 * @hooked storeone_quickview - 11
+			 * @hooked sanjeev_quickview - 11
 			 * &hooked woocommerce_add_top_actions -12
 			 * @hooked woocommerce_template_loop_add_to_cart - 13
 			 * @hooked woocommerce_template_loop_product_thumbnail_link_end -14

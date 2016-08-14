@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package waiba
+ * @package Dokan
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -19,7 +19,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 </div><!-- end sidebar-button-toggler -->
 <?php if (is_shop() || is_product_category() || is_product()): ?>
 	<div id="secondary" class="widget-area col-md-3" role="complementary">
-		<?php dynamic_sidebar( 'waiba-sidebar-shop' ); ?>
+		<?php dynamic_sidebar( 'sanjeev-sidebar-shop' ); ?>
 	</div><!-- #secondary -->
 	
 <?php else: ?>
