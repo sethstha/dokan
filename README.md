@@ -20,5 +20,5 @@ Dokan is minimal, clean WooCommerce theme developed considering User Experience 
 * Beautiful Designed pages, blog and product.
 * More Features Coming right down.
 
-# INFO
-Please Do not use theme, right now. It's being customized for the latest WooCommerce.
+### Changelog
+
