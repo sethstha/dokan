@@ -1,0 +1,11 @@
+/*=====================================
+=            MOBILE DEVICE            =
+=====================================*/
+@media (max-width: 768px) {
+  .social-share .social-icon a {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/*=====  End of MOBILE DEVICE  ======*/

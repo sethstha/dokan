@@ -1,0 +1,32 @@
+.san-title{
+	margin: 60px 0;
+	.title{
+		.title-text{
+			text-transform: uppercase;
+			font-weight: bold;
+			position: relative;
+		}
+	}
+}
+
+/*----------  Alignment  ----------*/
+.san-title-align-center{
+	text-align: center;
+}
+
+.san-title-aligh-right{
+	text-align: right;
+}
+
+
+/*----------  variation  ----------*/
+.san-title-page{
+	border-bottom: 1px solid $color-gray-lighten;
+	margin: 0;
+	padding-bottom: 20px;
+	margin-bottom: 45px;
+
+	.title-text{
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,231 @@
+.header-main{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 99;
+}
+
+.header-top{
+	background: $color-gray-darker;
+	padding: 10px;
+}
+
+/*===============================
+=            Top bar            =
+===============================*/
+
+.topbar-container{
+	font-size: 12px;
+	text-transform: uppercase;
+	display: table;
+	width: 100%;
+}
+
+.top-bar-left, .top-bar-right{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.topbar-info-text{
+	color: white;
+	margin: 0;
+}
+
+.top-bar-menu{
+	margin: 0;
+	float: right;
+	li{
+		display: inline-block;
+		padding-left: 30px;
+
+		a{
+			color: $color-gray-lighten;
+
+			&:hover{
+				color: white;
+				border-color: white;
+			}
+		}
+	}
+}
+
+/*=====  End of Top bar  ======*/
+
+
+
+/*----------  Header bottom  ----------*/
+.header-bottom{
+	background: #fff;
+	transition: all 300ms ease-in-out;
+
+	&.shrink{
+		padding: 5px 0;
+		box-shadow: 1px 0 5px rgba(0,0,0, .3);
+	}
+}
+
+.logo-main-site{
+	padding: 5px 0;
+}
+.site-logo{
+	width: 263px;
+	h3{
+		margin: 0;
+	}
+}
+.site-logo, .header-actions-container, .main-nav{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/*======================================
+=            header actions            =
+======================================*/
+
+.header-actions-container{
+	.header-actions{
+		position: relative;
+		min-width: 140px;
+		float: right;
+		margin: 0;
+		list-style-type: none;
+		text-align: right;
+		.header-list{
+			display: inline-block;
+			padding-left: 20px;
+			
+			.icon{
+				font-size: 18px;
+				position: relative;
+				padding: 15px 0;
+			}
+
+			.product-countation{
+				position: absolute;
+				top: -5px;
+				right: -8px;
+				background: $color-gray;
+				font-size: 11px;
+				width: 15px;
+				height: 15px;
+				border-radius: 100%;
+				color: white;
+				text-align: center;
+			}
+
+			&.haction-mini-cart{
+				margin-left: 10px;
+				cursor: pointer;
+				.product-countation{
+					background: $color-secondary;
+				}
+
+				.header-mini-cart-wrapper{
+					display: none;
+					cursor: pointer;
+				}
+			}
+
+			&.haction-search{
+				
+				.search-form{
+					display: none;
+					width: 400px;
+					position: absolute;
+					right: 0;
+					padding: 15px;
+					background: white;
+					border: 1px solid $color-gray-lighten;
+					z-index: 999;
+					border-top: none;
+
+					>h6{
+						margin: 0 0 15px 0;
+					}
+
+					input[type="search"]{
+						padding: 8px 15px;
+						width: 76.9%;
+						border: 1px solid $color-gray-lighten;
+					}
+
+					label{
+						display: none;
+					}
+
+					input[type="submit"]{
+						padding: 8px 10px;
+						background: #e3e3e3;
+						text-transform: uppercase;
+						transition: all 300ms ease-in-out;
+						outline: none;
+						border: none;
+						background: $color-gray-darker;
+						color: white;
+						&:hover{
+							background: lighten($color-gray-darker, 10);
+						}
+
+						&:active{
+							background: darken($color-gray-darker, 10);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*=====  End of header actions  ======*/
+
+
+/*===================================
+=            PAGE HEADER            =
+===================================*/
+
+.page-head{
+	.page-header{
+		text-align: center;
+		margin: 45px 0;
+
+
+		.page-title{
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+			
+		hr{
+			width: 20%;
+			margin: 15px auto;
+		}
+		.taxonomy-description{
+			width: 40%;
+			margin: 0 auto;
+		}
+	}
+}
+
+/*=====  End of PAGE HEADER  ======*/
+
+/*=====================================
+=            Header Mobile            =
+=====================================*/
+
+.header-mobile{
+	background: #fff;
+	padding: 10px 0;
+
+	display: none;
+
+	.mobile-logo{
+		text-align: center;
+	}
+
+	.bag-icon{
+		font-size: 20px;
+		float: right;
+		vertical-align: center;
+	}
+}
+
+/*=====  End of Header Mobile  ======*/

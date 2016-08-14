@@ -1,0 +1,24 @@
+/*==========  Gray colors  ==========*/
+
+$color-gray-base: 				#000;
+$color-gray-darken: 			#252525; 
+$color-gray-darker: 			#1e1e1f; //Gray 85%
+$color-gray-dark: 				#424143;  // Gray 80%
+$color-gray: 					#67666a; // Gray 67%
+$color-gray-light:				#807f83; // Gray 65%
+$color-gray-lighter: 			#cbc9cf; // Gray 30%
+$color-gray-lighten:			#e5e4e6; // Gray 15%
+
+/*=====  Light colors  ======*/
+$color-white:					#fff;
+$color-secondary:				#EF7278;
+/*==========  Brand-colors  ==========*/
+
+$color-brand-primary:        	#F62459 !default; // #337ab7
+$color-brand-success:        	#5cb85c !default;
+$color-brand-info:           	#5bc0de;
+$color-brand-warning:        	#f0ad4e !default;
+$color-brand-danger:         	#d9534f !default;
+
+
+$color-heading:					$color-gray-dark;

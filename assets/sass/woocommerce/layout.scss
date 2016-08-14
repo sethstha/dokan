@@ -1,0 +1,55 @@
+.woocommerce-filters{
+	margin-bottom: 30px;
+}
+/*=======================================
+=            YITH QUICK VIEW            =
+=======================================*/
+#yith-quick-view-modal{
+	.yith-quick-view-overlay{
+		background: rgba( 0, 0, 0, 0.5);
+	}
+	.yith-wcqv-wrapper{
+		.yith-wcqv-main{
+			box-shadow: none;
+
+			.images{
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.yith-wcqv-head{
+				.yith-wcqv-close{
+					background: $color-gray-dark;
+					color: $color-white;
+				}
+			}
+		}
+	}
+}
+/*=====  End of YITH QUICK VIEW  ======*/
+
+/*===========================================
+=            WOOCOMMERCE MESSAGE            =
+===========================================*/
+
+.woocommerce-message{
+	background: $color-gray-lighten;
+	padding: 10px 0;
+	margin-bottom: 30px;
+
+	.button{
+		background: $color-gray-darker;
+		color: white;
+		&:hover{
+			background: lighten($color-gray-darker, 10);
+		}
+
+		&:active{
+			background: darken($color-gray-darker, 10);
+		}
+	}
+}
+
+/*=====  End of WOOCOMMERCE MESSAGE  ======*/

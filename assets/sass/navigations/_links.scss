@@ -1,0 +1,22 @@
+a {
+	color: $color-gray-darker;
+	position: relative;
+	outline: none;
+	text-decoration: none;
+	&:visited {
+		color: $color-gray-dark;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+	}
+	&:focus {
+		
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+
+	}
+}

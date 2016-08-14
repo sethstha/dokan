@@ -1,0 +1,122 @@
+.wr-megamenu-container {
+	text-transform: uppercase;
+	ul.wr-mega-menu ul.sub-menu {
+		background-color: rgba(255,255,255, .8);
+	}
+	
+	li {
+		a{
+			&:hover{
+				color: white !important; 
+			}
+		}
+	}
+	ul.wr-mega-menu{
+		margin: 0 auto !important;
+		
+
+		>li{
+			float: none !important;
+			a{
+				padding: 10px 15px;
+				color: $color-gray-darker;
+			}
+		}
+		
+		li.search-main-menu{
+			.menu_title{
+				display: none;
+			}
+		}
+
+		ul.sub-menu{
+			left: 0;
+			border: none !important;
+			background: rgba(255,255,255, .8);
+		}
+	}
+	.current_page_item > a, .current_page_ancestor > a, .current-menu-item > a, .current-menu-ancestor > a{
+		color: $color-gray-darker !important;
+		text-decoration: underline;
+	}
+
+	.wr-megamenu-inner {
+		background-color: rgba(255,255,255, .8);
+		border: none !important;
+		text-align: left;
+
+		.jsn-bootstrap3{
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		.caption{
+			color: $color-gray-dark;
+
+			&:hover{
+				color: #fff;
+			}
+		}
+
+		.submenu-items{
+			a{
+				&:hover{
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	&.white{
+		.wr-megamenu-container{
+			ul.wr-mega-menu{
+				margin: 0 auto !important;
+				
+
+				>li{
+					float: none !important;
+					>a{
+						color: $color-gray-dark;
+					}
+				}
+			}
+
+			.current_page_item > a, .current_page_ancestor > a, .current-menu-item > a, .current-menu-ancestor > a{
+				color: $color-gray-dark; 	
+				text-decoration: underline;
+			}
+		}
+	}
+
+}
+
+.primary-menu{
+	&.primary-menu-homepage{
+		.wr-megamenu-container{
+			border-bottom: none;
+			ul.wr-mega-menu{
+				margin: 0 auto !important;
+
+
+				>li{
+					float: none !important;
+					>a{
+						color: $color-white;
+					}
+				}
+			}
+
+			.current_page_item > a, .current_page_ancestor > a, .current-menu-item > a, .current-menu-ancestor > a{
+				
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 783px) {
+	.wr-megamenu-container ul.wr-mega-menu ul.sub-menu li:hover a {
+		color: inherit !important;
+	}
+}

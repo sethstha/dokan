@@ -1,0 +1,94 @@
+
+/*=====================================
+=            MOBILE DEVICE            =
+=====================================*/
+
+@media (max-width: 768px) {
+	.social-share{
+		.social-icon{
+			margin-right: 5px !important;
+			a{
+				width: 30px !important;
+				height: 30px !important;
+				padding: 0 !important;
+
+				i{
+					font-size: 10px !important;
+				}
+			}
+		}
+	}
+
+	.products{
+		.top-actions{
+			display: block !important;
+
+			li:first-child{
+				display: none;
+			}
+		}
+	}
+
+	.category-preview{
+		.banner-wrapper{
+			margin-bottom: 15px;
+
+			min-height: 200px;
+		}
+	}
+
+	.main-content{
+		padding-top: 0 !important;
+	}
+
+	.san-title{
+		margin: 15px 0;
+	}
+	
+	.header-main{
+		position: static;
+	}
+	.header-top, .header-bottom,{
+		display: none !important;
+	}
+
+	.header-mobile{
+		display: block;
+	}
+
+	.banner-categories{
+		.san-title{
+			display: none;
+		}
+
+		.category-preview{
+			margin-bottom: 15px !important;
+			
+			height: 200px;
+			overflow: hidden;
+			img{
+				width: 100% !important;
+			}
+		}
+	}
+
+	#secondary{
+		display: none;
+	}
+
+	.sidebar-button-toggler{
+		display: block;
+	}
+
+	.widget-newsletter{
+		display: none;
+	}
+
+	.woocommerce-filters{
+		display: none;
+	}
+}
+
+
+
+/*=====  End of MOBILE DEVICE  ======*/
