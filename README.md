@@ -21,7 +21,7 @@ Dokan is minimal, clean WooCommerce theme developed considering User Experience 
 * More Features Coming right down.
 
 ### Changelog
-2016/08/14
+#### 2016/08/14
 *Updated to WooCommerce 2.6.4
 *Fixed navigation menu error
 
@@ -32,4 +32,6 @@ Dokan is minimal, clean WooCommerce theme developed considering User Experience 
 * Create no content page
 * Style search form
 * Style product category catalog
+* Add demo site
+* Create Documentations
 
