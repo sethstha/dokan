@@ -123,6 +123,9 @@
 			</div>
 		</div><!-- end header-mobile -->
 	</header><!-- end header-main -->
+
+	<?php if (!is_page_template( 'page-templates/page-homepage.php' ) ): ?>
 	<section class="main-content">
 		<div class="container">
 			<div class="row">
+	<?php endif ?>

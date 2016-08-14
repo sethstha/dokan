@@ -10,82 +10,51 @@
  */
 
 
-get_header('homepage'); ?>
+get_header(); ?>
 
-	<section class="main-content">
-		<div class="homepage-slider">
-		</div> <!-- end homepage-slider -->
+<section class="main-content">
+	<div class="homepage-slider">
+	</div> <!-- end homepage-slider -->
 
-		<div class="container">
-			<div class="row">
-	<div id="primary" class="content-area col-md-12">
-		<main id="main" class="site-main" role="main">
+	<div class="container">
+		<div class="row">
+			<div id="primary" class="content-area col-md-12">
+				<main id="main" class="site-main" role="main">
 
+					<?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ): ?>
+						<div class="san-title san-title-align-center">
+							<div class="title">
+								<h4 class="title-text">Featured Products</h4>
+							</div>
+							<div class="title-description">
+								Find the best products from our store.
+							</div>
+						</div>
+						<?php echo do_shortcode('[featured_products per_page="4" columns="4"]') ?>
+						<div class="san-title san-title-align-center">
+							<div class="title">
+								<h4 class="title-text">Recent Products</h4>
+							</div>
+							<div class="title-description">
+								Find the latest products from our store.
+							</div>
+						</div>
+						<?php echo do_shortcode('[recent_products per_page="4" columns="4"]') ?>
+					<?php endif ?>
 
+					<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="banner-categories">
-				<div class="san-title san-title-align-center">
-					<div class="title">
-					<h4 class="title-text">Categories</h4>
-					</div>
-					<div class="title-description">
+						<?php get_template_part( 'template-parts/content', 'page-homepage' ); ?>
 
-						Quickly find what are you searching for.
+						<?php
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+						?>
 
-					</div>
-				</div> <!-- .san-title -->
-				<div class="row">
-					<div class="category-container col-md-4">
-						<a href="http://waibanco.com/product-category/women/">
-							<figure class="category-thumbnail">
-								<img src="http://waibanco.com/wp-content/uploads/2015/11/categoryonenew.png" alt="">
-								<figcaption>
-									<h3>Women</h3>
-								</figcaption>
-							</figure>
-						</a>
-					</div> <!-- .category-container -->
+					<?php endwhile; // End of the loop. ?>
 
-					<div class="category-container col-md-4">
-						<a href="http://waibanco.com/product-category/men/">
-							<figure class="category-thumbnail">
-								<img src="http://waibanco.com/wp-content/uploads/2015/02/men.jpg" alt="">
-								<figcaption>
-									<h3>Men</h3>
-								</figcaption>
-							</figure>
-						</a>
-					</div> <!-- .category-container -->
-
-					<div class="category-container col-md-4">
-						<a href="http://waibanco.com/product-category/kids/">
-							<figure class="category-thumbnail">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/img/cat-3.jpg" alt="">
-								<figcaption>
-									<h3>Kids</h3>
-								</figcaption>
-							</figure>
-						</a>
-					</div> <!-- .category-container -->
-
-					
-				</div><!-- end row -->
-			</div><!-- end banner-categories -->
-			
-			
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'template-parts/content', 'page-homepage' ); ?>
-
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-
-			<?php endwhile; // End of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-<?php get_footer(); ?>
+				</main><!-- #main -->
+			</div><!-- #primary -->
+			<?php get_footer(); ?>
