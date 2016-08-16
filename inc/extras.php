@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package waiba
+ * @package dokan
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function waiba_body_classes( $classes ) {
+function sanjeev_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -21,4 +21,4 @@ function waiba_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'waiba_body_classes' );
+add_filter( 'body_class', 'sanjeev_body_classes' );

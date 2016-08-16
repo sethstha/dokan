@@ -51,6 +51,9 @@ jQuery(document).ready(function() {
 		}
 	}, '.header-actions .haction-mini-cart');
 	/*=====  End of On scroll header	  ======*/
+
+
+	
 	
 });
 

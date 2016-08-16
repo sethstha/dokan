@@ -28,7 +28,7 @@
 			<div class="container">
 				<div class="topbar-container">
 					<div class="top-bar-left">
-						<p class="topbar-info-text">Shipping Worldwide | Free Shipping for Nepal</p>
+						<p class="topbar-info-text"><?php echo get_theme_mod( 'dokan_header_text', 'Shipping Worldwide' ); ?></p>
 					</div><!-- end top-bar-container -->
 
 					<div class="top-bar-right">
@@ -65,45 +65,47 @@
 
 		<div class="header-bottom">
 			<div class="container">
-				<div class="text-center logo-main-site">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri() . '/assets/img/logo.png'; ?>" alt=""></a>
-				</div><!-- end site-logo -->
-				<div class="table-wrapper">
+				<div class="container-relative">
+					<div class="text-center logo-main-site">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'dokan_setting_logo' ) ); ?>" alt=""></a>
+					</div><!-- end site-logo -->
+					<div class="table-wrapper">
 
-					<div class="main-nav">
-						<?php    /**
-							* Displays a navigation menu
-							* @param array $args Arguments
-							*/
-							$args = array(
-								'theme_location' => 'primary',
-								'menu_class' => 'navigation-main',
-							);
-						
-							wp_nav_menu( $args ); ?>
-					</div><!-- end main-nav -->
+						<nav class="navigation-primary <?php echo get_theme_mod( 'dokan_setting_megamenu_style' ); ?>">
+							<?php    /**
+								* Displays a navigation menu
+								* @param array $args Arguments
+								*/
+								$args = array(
+									'theme_location' => 'primary',
+									'menu_class' => 'menu-primary',
+								);
+							
+								wp_nav_menu( $args ); ?>
+						</nav><!-- end main-nav -->
 
-					<div class="header-actions-container">
-						<ul class="header-actions">
-							<li class="haction-search header-list">
-								<a href=""><i class="icon icon-magnifier"></i></a>
+						<div class="header-actions-container">
+							<ul class="header-actions">
+								<li class="haction-search header-list">
+									<a href=""><i class="icon icon-magnifier"></i></a>
 
-								<div class="search-form">
-									<h6>Search Products</h6>
-									<?php get_product_search_form(); ?>
-								</div>
-							</li>
-							<li class="haction-mini-cart header-list">
-								<i class="icon icon-bag"></i> <span class="product-countation"><?php echo WC()->cart->cart_contents_count ?></span>
+									<div class="search-form">
+										<h6>Search Products</h6>
+										<?php get_product_search_form(); ?>
+									</div>
+								</li>
+								<li class="haction-mini-cart header-list">
+									<i class="icon icon-bag"></i> <span class="product-countation"><?php echo WC()->cart->cart_contents_count ?></span>
 
-								<div class="header-mini-cart-wrapper">
-									<?php woocommerce_mini_cart(); ?>
-								</div><!-- end header-mini-cart-wrapper -->
-								
-							</li>
-						</ul> <!-- end header-actions -->
-					</div><!-- end header-actions-contaienr -->
-				</div> <!-- end table wrapper -->
+									<div class="header-mini-cart-wrapper">
+										<?php woocommerce_mini_cart(); ?>
+									</div><!-- end header-mini-cart-wrapper -->
+									
+								</li>
+							</ul> <!-- end header-actions -->
+						</div><!-- end header-actions-contaienr -->
+					</div> <!-- end table wrapper -->
+				</div><!-- end container-relative -->
 			</div><!-- end container -->
 		</div><!-- end header-bottom -->
 

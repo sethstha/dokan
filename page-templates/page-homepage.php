@@ -13,9 +13,23 @@
 get_header(); ?>
 
 <section class="main-content">
-	<div class="homepage-slider">
-	</div> <!-- end homepage-slider -->
-
+	
+	<?php if ( get_theme_mod( 'dokan_homepage_slider') == 1 ): ?>
+		<div class="homepage-slider">
+			<?php if ( is_plugin_active( 'master-slider/master-slider.php' ) ): ?>
+			<?php 
+				if ( !get_theme_mod( 'dokan_homepage_slider_list' ) == 0 ): 
+					$slider_id = get_theme_mod( 'dokan_homepage_slider_list' );
+					masterslider($slider_id);
+				endif
+			?>
+			<?php else: ?>
+				<div class="alert alert-danger">
+				 	<strong>Error! </strong> Master Slider is not activated. Please activate it first.
+				</div>
+			<?php endif ?>
+		</div> <!-- end homepage-slider -->
+	<?php endif ?>
 	<div class="container">
 		<div class="row">
 			<div id="primary" class="content-area col-md-12">
@@ -30,7 +44,7 @@ get_header(); ?>
 								Find the best products from our store.
 							</div>
 						</div>
-						<?php echo do_shortcode('[featured_products per_page="4" columns="4"]') ?>
+						<?php echo do_shortcode('[featured_products per_page="8" columns="8"]') ?>
 						<div class="san-title san-title-align-center">
 							<div class="title">
 								<h4 class="title-text">Recent Products</h4>
@@ -39,7 +53,7 @@ get_header(); ?>
 								Find the latest products from our store.
 							</div>
 						</div>
-						<?php echo do_shortcode('[recent_products per_page="4" columns="4"]') ?>
+						<?php echo do_shortcode('[recent_products per_page="8" columns="8"]') ?>
 					<?php endif ?>
 
 					<?php while ( have_posts() ) : the_post(); ?>

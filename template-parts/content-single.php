@@ -20,7 +20,7 @@
 
 		<div class="entry-meta">
 			<div class="entry-meta-container">
-				<?php waiba_posted_on(); ?>
+				<?php sanjeev_posted_on(); ?>
 			</div>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
