@@ -5,13 +5,11 @@ Dokan is minimal, clean WooCommerce theme developed considering User Experience 
 ### Sneak Peak
 ![alt text](http://www.sanjeevshrestha.me/themes/meditationmusic/wp-content/uploads/2016/08/sneakpeak.png "Preview")
 
-### New Megamenu Design
-Choose between dark and light megamenu theme.
-![alt text](http://www.sanjeevshrestha.me/themes/meditationmusic/wp-content/uploads/2016/08/menu.png "Preview")
 
-### Customizer Theme Option
-Customize headertop text, megamenu style, homepage slider etc just from customizer.
-![alt text](http://www.sanjeevshrestha.me/themes/meditationmusic/wp-content/uploads/2016/08/options.png "Preview")
+![alt text](http://www.sanjeevshrestha.me/themes/meditationmusic/wp-content/uploads/2016/08/newmegamenu.png "Preview")
+
+
+![alt text](http://www.sanjeevshrestha.me/themes/meditationmusic/wp-content/uploads/2016/08/themeoption.png "Preview")
 
 ### Features Included
 * Responsive Slider
@@ -28,6 +26,12 @@ Customize headertop text, megamenu style, homepage slider etc just from customiz
 * More Features Coming right down.
 
 ### Changelog
+
+#### 2016/08/17
+* Added dropdown menu without megamenu
+* fixed megamenu color issue
+* Fixed customizer theme option
+
 #### 2016/08/16
 * Added theme option in customizer
 * Added homepage slider function

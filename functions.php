@@ -158,10 +158,8 @@ function sanjeev_scripts() {
 	wp_enqueue_style( 'sanjeev-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-lato', 'https://fonts.googleapis.com/css?family=Lato:400,700');
 	wp_enqueue_style( 'font-opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-	wp_enqueue_style( 'bxslider', get_template_directory_uri() .'/assets/css/jquery.bxslider.css');
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'bxslider', get_template_directory_uri(). '/assets/js/jquery.bxslider.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'sanjeev-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

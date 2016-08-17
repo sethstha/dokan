@@ -85,10 +85,27 @@
 	/*===================================
 	=            WR MEGAMENU            =
 	===================================*/
+	.wr-megamenu-container{
+		background: transparent !important;
+	}
 
 	.wr-mega-menu{
+
+		ul.sub-menu {
+			ul.sub-menu{
+				a{
+					color: $color-gray-darker !important;
+
+					&:hover{
+						color: $color-white !important;
+					}
+				}
+			}
+		}
+
 		.wr-megamenu-inner{
 			border: none;
+			border-top: 2px solid $color-gray-darker;
 			border-bottom: 1px solid $color-gray-lighten;
 			border-left: 1px solid $color-gray-lighten;
 			border-right: 1px solid $color-gray-lighten;
@@ -100,10 +117,9 @@
 			>a{
 				color: $color-gray-darker !important;
 				font-weight: bold !important;
-				
 			}
-
 		}
+
 		>li{
 			>a{
 				color: $color-gray-darker;

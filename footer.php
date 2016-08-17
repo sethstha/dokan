@@ -21,16 +21,16 @@
 					<div class="widget widget-social">
 						<h3 class="widget-title">Social</h3>
 						<ul class="social-share">
-							<li class="social-icon facebook"><a href="https://www.facebook.com/WaibaCo-1431725713814668"><i class="fa fa-facebook"></i></a>
+							<li class="social-icon facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
 								<span>facebook</span>
 							</li>
-							<li class="social-icon twitter"><a href="https://twitter.com/WaibaandCo"><i class="fa fa-twitter"></i></a>
+							<li class="social-icon twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
 								<span>twitter</span>
 							</li>
-							<li class="social-icon pinterest"><a href="https://www.pinterest.com/infowaibanco/"><i class="fa fa-pinterest"></i></a>
+							<li class="social-icon pinterest"><a href="https://www.pinterest.com//"><i class="fa fa-pinterest"></i></a>
 								<span>pinterest</span>
 							</li>
-							<li class="social-icon instagram"><a href="https://www.instagram.com/waibanco_official"><i class="fa fa-instagram"></i></a>
+							<li class="social-icon instagram"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
 								<span>instagram</span>
 							</li>
 						</ul>

@@ -26,7 +26,7 @@ function dokan_customize_register( $wp_customize ){
 	$wp_customize->add_section( 'dokan_section_header', array(
 		'priority'       => 160,
 		'panel'          => 'dokan_panel_main',
-		'title'          => __( 'Header', 'TEXT_DOMAIN' ),
+		'title'          => __( 'Header Options', 'TEXT_DOMAIN' ),
 		'description'    => __( 'Customization on header', 'TEXT_DOMAIN' ),
 		'capability'     => 'edit_theme_options',
 	) );
@@ -43,7 +43,7 @@ function dokan_customize_register( $wp_customize ){
 	$wp_customize->add_section( 'dokan_section_homepage', array(
 		'priority'       => 160,
 		'panel'          => 'dokan_panel_main',
-		'title'          => __( 'Homepage Setting', 'TEXT_DOMAIN' ),
+		'title'          => __( 'Homepage Settings', 'TEXT_DOMAIN' ),
 		'description'    => __( '', 'TEXT_DOMAIN' ),
 		'capability'     => 'edit_theme_options',
 	) );

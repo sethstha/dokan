@@ -44,7 +44,7 @@ get_header(); ?>
 								Find the best products from our store.
 							</div>
 						</div>
-						<?php echo do_shortcode('[featured_products per_page="8" columns="8"]') ?>
+						<?php echo do_shortcode('[featured_products per_page="4" columns="4"]') ?>
 						<div class="san-title san-title-align-center">
 							<div class="title">
 								<h4 class="title-text">Recent Products</h4>
@@ -53,7 +53,7 @@ get_header(); ?>
 								Find the latest products from our store.
 							</div>
 						</div>
-						<?php echo do_shortcode('[recent_products per_page="8" columns="8"]') ?>
+						<?php echo do_shortcode('[recent_products per_page="4" columns="4"]') ?>
 					<?php endif ?>
 
 					<?php while ( have_posts() ) : the_post(); ?>
