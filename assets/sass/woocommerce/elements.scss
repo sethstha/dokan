@@ -89,7 +89,9 @@
 
 	.panel{
 		padding:0 15px 15px 15px;
-
+		background: transparent;
+		box-shadow: none;
+		
 		>h2{
 			font-size: $font-size-h5;
 			text-transform: uppercase;
@@ -276,6 +278,10 @@
 
 	.button{
 		float: right;
+	}
+
+	.clear{
+		clear:both;
 	}
 }
 

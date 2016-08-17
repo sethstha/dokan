@@ -889,7 +889,7 @@ a:hover, a:active { outline: 0; }
 
 .woocommerce-tabs .tabs li.active a { border-bottom: 3px solid #424143; }
 
-.woocommerce-tabs .panel { padding: 0 15px 15px 15px; }
+.woocommerce-tabs .panel { padding: 0 15px 15px 15px; background: transparent; box-shadow: none; }
 
 .woocommerce-tabs .panel > h2 { font-size: 18px; text-transform: uppercase; }
 
@@ -956,6 +956,8 @@ a:hover, a:active { outline: 0; }
 .widget_price_filter .price_label { float: left; }
 
 .widget_price_filter .button { float: right; }
+
+.widget_price_filter .clear { clear: both; }
 
 /*=====  End of Woocommerce Price Filter  ======*/
 /*=============================================
@@ -1128,7 +1130,7 @@ a:hover, a:active { outline: 0; }
 
 .products .product .product-thumbnail { position: relative; }
 
-.products .product .product-thumbnail .attachment-shop_catalog { width: 100%; max-width: 100%; height: 100%; }
+.products .product .product-thumbnail .attachment-shop_catalog { max-width: 100%; height: auto; }
 
 .products .product .product-thumbnail .top-actions { display: none; padding: 20px 0; list-style-type: none; position: absolute; bottom: 0; text-align: center; width: 100%; background: rgba(0, 0, 0, 0.5); }
 
