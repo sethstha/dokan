@@ -6,10 +6,10 @@
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
-add_action('woocommerce_before_main_content', 'sanjeev_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'sanjeev_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'dokan_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'dokan_wrapper_end', 10);
 
-function sanjeev_wrapper_start() {
+function dokan_wrapper_start() {
 	if (is_shop() || is_product_category()) {
 		echo '<div id="primary" class="content-area col-md-9">';
 	}else{
@@ -18,7 +18,7 @@ function sanjeev_wrapper_start() {
 	echo '<main id="main" class="site-main" role="main">';
 }
 
-function sanjeev_wrapper_end() {
+function dokan_wrapper_end() {
 	echo '</main><!-- end main -->';
 	echo '</div> <!-- end primary -->';
 }
@@ -65,15 +65,15 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 =            WRAPPING WOOCOMMERCE FILTERS            =
 ====================================================*/
 
-add_action( 'woocommerce_before_shop_loop', 'sanjeev_filter_wrapper_start', 10 );
-add_action( 'woocommerce_before_shop_loop', 'sanjeev_filter_wrapper_end', 40 );
+add_action( 'woocommerce_before_shop_loop', 'dokan_filter_wrapper_start', 10 );
+add_action( 'woocommerce_before_shop_loop', 'dokan_filter_wrapper_end', 40 );
 
-function sanjeev_filter_wrapper_start(){
+function dokan_filter_wrapper_start(){
 	echo '<div class="clearfix"></div>';
 	echo '<div class="woocommerce-filters row">';
 }
 
-function sanjeev_filter_wrapper_end(){
+function dokan_filter_wrapper_end(){
 	echo '</div><!-- woocommerce-filters -->';
 	echo '<div class="clearfix"></div>';
 }

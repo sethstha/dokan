@@ -68,7 +68,7 @@
 				<div class="footer-link-sections">
 					<div class="row">
 						<?php // Dynamic Sidebar
-						if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'waiba-sidebar-footer-bottom' ) ) : ?>
+						if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'dokan-sidebar-footer-bottom' ) ) : ?>
 					
 							<div class="alert"><p>Please Add some widgets on footer bottom</p></div>
 					

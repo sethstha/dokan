@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package waiba
+ * @package dokan
  */
 
 ?>
@@ -20,7 +20,7 @@
 
 		<div class="entry-meta">
 			<div class="entry-meta-container">
-				<?php sanjeev_posted_on(); ?>
+				<?php dokan_posted_on(); ?>
 			</div>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
@@ -36,7 +36,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php waiba_entry_footer(); ?>
+		<?php dokan_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 

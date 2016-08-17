@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package waiba
+ * @package dokan
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'waiba' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dokan' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -25,7 +25,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'waiba' ),
+					esc_html__( 'Edit %s', 'dokan' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

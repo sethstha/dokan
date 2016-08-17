@@ -145,21 +145,14 @@ function dokan_customize_register( $wp_customize ){
 		
 	) );
 
-	//lets get slider 
-	global $wpdb;
-	$sliders_info = array();
-	if ($results = $wpdb->get_results('SELECT id, title FROM wp_masterslider_sliders')) {
-		foreach ($results as $result) {
-			$sliders_info[$result->id] = $result->title;
-		}
-	}
+	$slider_list = get_masterslider_names( true );
 
 	$wp_customize->add_control( 'dokan_homepage_slider_list', array(
 		'label'       => __( 'Select Homepage Slider', 'TEXT_DOMAIN' ),
 		'description' => __( '', 'TEXT_DOMAIN' ),
 		'section'     => 'dokan_section_homepage',
 		'type'        => 'select', 
-		'choices'  => $sliders_info,
+		'choices'  => $slider_list,
 		'settings'    => 'dokan_homepage_slider_list',
 	) );
 	
