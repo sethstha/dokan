@@ -11,6 +11,9 @@ Dokan is minimal, clean WooCommerce theme developed considering User Experience 
 
 ![alt text](http://www.sanjeevshrestha.me/themes/meditationmusic/wp-content/uploads/2016/08/themeoption.png "Preview")
 
+### DEMO
+[Click here](http://sanjeevshrestha.me/themes/dokan)
+
 ### Features Included
 * Responsive Slider
 * Mega Menu
@@ -46,6 +49,5 @@ Dokan is minimal, clean WooCommerce theme developed considering User Experience 
 
 
 ### TODO
-* Add demo site
 * Create Documentation
 
