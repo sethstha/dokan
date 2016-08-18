@@ -18,23 +18,12 @@
 		<div class="footer-top">
 			<div class="container">
 				<div class="table-wrapper">
-					<div class="widget widget-social">
-						<h3 class="widget-title">Social</h3>
-						<ul class="social-share">
-							<li class="social-icon facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-								<span>facebook</span>
-							</li>
-							<li class="social-icon twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
-								<span>twitter</span>
-							</li>
-							<li class="social-icon pinterest"><a href="https://www.pinterest.com//"><i class="fa fa-pinterest"></i></a>
-								<span>pinterest</span>
-							</li>
-							<li class="social-icon instagram"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-								<span>instagram</span>
-							</li>
-						</ul>
-					</div><!-- end widget -->
+					<?php 
+						if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'dokan-sidebar-footer-top' ) ) : ?>
+					
+							<div class="alert alert-warning"><p><?php echo __( 'Please Add some widgets on footer top', 'dokan' ) ?></p></div>
+					
+						<?php endif;?>
 				</div>
 
 				<div class="clearfix"></div>
@@ -46,8 +35,8 @@
 			<div class="container">
 				<div class="widget widget-newsletter row">
 					<div class="widget-header col-md-3 col-sm-12">
-						<h6 class="widget-title">Newsletter Signup</h6>
-						<p>Stay on fashion and know about fashion</p>
+						<h6 class="widget-title"><?php echo __( 'Newsletter Signup', 'dokan' ) ?></h6>
+						<p><?php echo __( 'Stay on fashion and know about it', 'dokan' ) ?></p>
 					</div> <!-- end widget-header -->
 
 					<form action="" class="form-newsletter col-md-9 col-sm-12">
@@ -67,12 +56,12 @@
 
 				<div class="footer-link-sections">
 					<div class="row">
-						<?php // Dynamic Sidebar
+						<?php 
 						if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'dokan-sidebar-footer-bottom' ) ) : ?>
 					
-							<div class="alert"><p>Please Add some widgets on footer bottom</p></div>
+							<div class="alert"><p><?php echo __( 'Please Add some widgets on footer bottom', 'dokan' ) ?></p></div>
 					
-						<?php endif; // End Dynamic Sidebar Sidebar footer top ?>
+						<?php endif;?>
 					</div><!-- end row -->
 				</div><!-- end footer-link-sections -->
 			</div><!-- end container -->

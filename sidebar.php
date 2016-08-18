@@ -15,7 +15,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <!-- If is shop then show shop sidebar -->
 <div class="sidebar-button-toggler">
-	<span><i class="icon icon-bag"></i> Filter</span>
+	<span><i class="icon icon-bag"></i> <?php echo __( 'Filter', 'dokan' ); ?></span>
 </div><!-- end sidebar-button-toggler -->
 <?php if (is_shop() || is_product_category() || is_product()): ?>
 	<div id="secondary" class="widget-area col-md-3" role="complementary">

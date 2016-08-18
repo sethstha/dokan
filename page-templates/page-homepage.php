@@ -6,7 +6,7 @@
  *
  * Template Name: Homepage
  *
- * @package waiba
+ * @package dokan
  */
 
 

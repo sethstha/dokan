@@ -46,13 +46,13 @@
 								?>
 
 									<li><a href="<?php echo the_author_meta('user_url') ?>"><?php echo $name ?></a> </li>
-									<li class="user-logout"><a href="<?php echo wp_logout_url( get_permalink() ); ?>">Logout</a></li>
+									<li class="user-logout"><a href="<?php echo wp_logout_url( get_permalink() ); ?>"><?php echo __('Logout', 'dokan') ?></a></li>
 								<?php
 								
 							}else{
 								?>
-                					<li class="user-login"><a href="<?php echo bloginfo('url') ?>/register/">Register</a></li>
-									<li class="user-login"><a href="<?php echo bloginfo('url') ?>/login/">Login</a></li>
+                					<li class="user-login"><a href="<?php echo esc_url( home_url() ) ?>/register/"><?php echo __('Register', 'dokan') ?></a></li>
+									<li class="user-login"><a href="<?php echo esc_url( home_url() ) ?>/login/"><?php echo __('Login', 'dokan') ?></a></li>
 								<?php
 							}
 
@@ -91,18 +91,26 @@
 									<a href=""><i class="icon icon-magnifier"></i></a>
 
 									<div class="search-form">
-										<h6>Search Products</h6>
-										<?php get_product_search_form(); ?>
+										<h6><?php echo __('Search Products', 'dokan') ?></h6>
+										<?php 
+										if ( class_exists( 'WooCommerce') ) {
+											get_product_search_form(); 
+										}else{
+											get_search_form();
+										}
+										?>
 									</div>
 								</li>
-								<li class="haction-mini-cart header-list">
-									<i class="icon icon-bag"></i> <span class="product-countation"><?php echo WC()->cart->cart_contents_count ?></span>
+								<?php if ( class_exists( 'WooCommerce' ) ): ?>
+									<li class="haction-mini-cart header-list">
+										<i class="icon icon-bag"></i> <span class="product-countation"><?php echo WC()->cart->cart_contents_count ?></span>
 
-									<div class="header-mini-cart-wrapper">
-										<?php woocommerce_mini_cart(); ?>
-									</div><!-- end header-mini-cart-wrapper -->
-									
-								</li>
+										<div class="header-mini-cart-wrapper">
+											<?php woocommerce_mini_cart(); ?>
+										</div><!-- end header-mini-cart-wrapper -->
+										
+									</li>
+								<?php endif ?>
 							</ul> <!-- end header-actions -->
 						</div><!-- end header-actions-contaienr -->
 					</div> <!-- end table wrapper -->
@@ -120,7 +128,9 @@
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri() . '/assets/img/logo.png'; ?>" alt=""></a>
 					</div>
 					<div class="col-md-2">
-						<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="bag-icon"><i class="icon icon-bag"></i></a>
+						<?php if ( class_exists( 'WooCommerce' ) ): ?>
+							<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="bag-icon"><i class="icon icon-bag"></i></a>
+						<?php endif ?>
 					</div>
 				</div>
 			</div>

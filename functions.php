@@ -73,8 +73,7 @@ function dokan_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'dokan_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
+		'default-color' => 'f8f8f8',
 	) ) );
 
 	add_theme_support( 'woocommerce' );
@@ -110,40 +109,39 @@ function dokan_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 
-	   /**
-		* Creates a sidebar
-		* @param string|array  Builds Sidebar based off of 'name' and 'id' values.
-		*/
-		$args = array(
-			'name'          => __( 'Footer Bottom', 'Adds to the bottom of footer' ),
-			'id'            => 'dokan-sidebar-footer-bottom',
-			'description'   => 'Only place social widgets here',
-			'class'         => '',
-			'before_widget' => '<div id="%1$s" class="widget %2$s col-md-3">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h6 class="widget-title">',
-			'after_title'   => '</h6>'
-		);
-	
-		register_sidebar( $args );
 
+	register_sidebar( array(
+		'name'          => __( 'Footer Bottom', 'dokan' ),
+		'id'            => 'dokan-sidebar-footer-bottom',
+		'description'   => 'Widget to show on the bottom of signup.',
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s col-md-3">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>'
+	) );
 
-	   /**
-		* Creates a sidebar
-		* @param string|array  Builds Sidebar based off of 'name' and 'id' values.
-		*/
-		$shop_sidebar_args = array(
-			'name'          => __( 'Shop Sidebar', 'dokan' ),
-			'id'            => 'dokan-sidebar-shop',
-			'description'   => '',
-			'class'         => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h4 class="widgettitle">',
-			'after_title'   => '</h4>'
-		);
-	
-		register_sidebar( $shop_sidebar_args );
+	register_sidebar( array(
+		'name'          => __( 'Footer Top', 'dokan' ),
+		'id'            => 'dokan-sidebar-footer-top',
+		'description'   => 'Recommended only to place social widget here',
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>'
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Shop Sidebar', 'dokan' ),
+		'id'            => 'dokan-sidebar-shop',
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widgettitle">',
+		'after_title'   => '</h4>'
+	) );
 	
 	
 }
@@ -155,6 +153,7 @@ add_action( 'widgets_init', 'dokan_widgets_init' );
 function dokan_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+	wp_enqueue_style( 'simple-line-icons', get_template_directory_uri() . '/assets/css/simple-line-icons.css' );
 	wp_enqueue_style( 'dokan-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-lato', 'https://fonts.googleapis.com/css?family=Lato:400,700');
 	wp_enqueue_style( 'font-opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
@@ -167,6 +166,16 @@ function dokan_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dokan_scripts' );
+
+/**
+ *
+ * Editor styled
+ *
+ */
+function dokan_add_editor_styles(){
+	add_editor_style( get_stylesheet_uri() );
+}
+add_action( 'init', 'dokan_add_editor_styles' );
 
 /**
  *
@@ -205,4 +214,17 @@ require get_template_directory() . '/inc/jetpack.php';
  * Woocommerce compatibility.
  */
 require get_template_directory() . '/inc/woocommerce.php';
-require get_template_directory() . '/admin/plugin-activator//required-plugins.php';
+
+/**
+ *
+ * plugin activator
+ *
+ */
+require get_template_directory() . '/admin/plugin-activator/required-plugins.php';
+
+/**
+ *
+ * widget social
+ *
+ */
+require get_template_directory() . '/admin/widgets/widget_social.php';

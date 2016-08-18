@@ -10,8 +10,8 @@ function dokan_customize_register( $wp_customize ){
 	
 	$wp_customize->add_panel( 'dokan_panel_main', array(
 		'priority'       => 160,
-		'title'          => __( 'Dokan Theme Option', 'TEXT_DOMAIN' ),
-		'description'    => __( 'Panle Description.', 'TEXT_DOMAIN' ),
+		'title'          => __( 'Dokan Theme Option', 'dokan' ),
+		'description'    => __( 'Panle Description.', 'dokan' ),
 		'capability'     => 'edit_theme_options',
 	) );
 	
@@ -26,8 +26,8 @@ function dokan_customize_register( $wp_customize ){
 	$wp_customize->add_section( 'dokan_section_header', array(
 		'priority'       => 160,
 		'panel'          => 'dokan_panel_main',
-		'title'          => __( 'Header Options', 'TEXT_DOMAIN' ),
-		'description'    => __( 'Customization on header', 'TEXT_DOMAIN' ),
+		'title'          => __( 'Header Options', 'dokan' ),
+		'description'    => __( 'Customization on header', 'dokan' ),
 		'capability'     => 'edit_theme_options',
 	) );
 	
@@ -35,38 +35,47 @@ function dokan_customize_register( $wp_customize ){
 	$wp_customize->add_section( 'dokan_section_megamenu', array(
 		'priority'       => 160,
 		'panel'          => 'dokan_panel_main',
-		'title'          => __( 'Megamenu Settings', 'TEXT_DOMAIN' ),
-		'description'    => __( 'Megamenu styles and settings', 'TEXT_DOMAIN' ),
+		'title'          => __( 'Megamenu Settings', 'dokan' ),
+		'description'    => __( 'Megamenu styles and settings', 'dokan' ),
 		'capability'     => 'edit_theme_options',
 	) );
 	
+	/*----------  HOMEPAGE  ----------*/
 	$wp_customize->add_section( 'dokan_section_homepage', array(
 		'priority'       => 160,
 		'panel'          => 'dokan_panel_main',
-		'title'          => __( 'Homepage Settings', 'TEXT_DOMAIN' ),
-		'description'    => __( '', 'TEXT_DOMAIN' ),
+		'title'          => __( 'Homepage Settings', 'dokan' ),
+		'description'    => __( '', 'dokan' ),
 		'capability'     => 'edit_theme_options',
 	) );
 
 
-	
-	/**
-	 *
-	 * ELEMENTS
-	 *
-	 */
+	/*----------  SOCIAL  ----------*/
+	$wp_customize->add_section( 'dokan_section_social', array(
+		'priority'       => 160,
+		'panel'          => 'dokan_panel_main',
+		'title'          => __( 'Social Settings', 'dokan' ),
+		'description'    => __( 'Leave field empty that you dont want to show', 'dokan' ),
+		'capability'     => 'edit_theme_options',
+	) );
 
+
+	/*==============================
+	=            HEADER            =
+	==============================*/
+	
 	/*----------  Header top text  ----------*/
 	$wp_customize->add_setting( 'dokan_header_text', array(
 		'type' 			=> 'theme_mod',
 		'default' 		=> 'Shipping Worldwide',
-		'transport' 	=> 'refresh'
+		'transport' 	=> 'refresh',
+		'sanitize_callback'    => 'wp_filter_nohtml_kses',
 		)
 	);
 
 	$wp_customize->add_control( 'dokan_header_text', array(
-		'label'       => __( 'Header Tagline', 'TEXT_DOMAIN' ),
-		'description' => __( 'Tagline that on the left top', 'TEXT_DOMAIN' ),
+		'label'       => __( 'Header Tagline', 'dokan' ),
+		'description' => __( 'Tagline that on the left top', 'dokan' ),
 		'section'     => 'dokan_section_header',
 		'type'        => 'text',
 		'settings'    => 'dokan_header_text',
@@ -80,33 +89,39 @@ function dokan_customize_register( $wp_customize ){
 		'default'              =>  get_template_directory_uri() . '/assets/img/logo.png',
 		'transport'            => 'refresh', 
 		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'wp_filter_nohtml_kses',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,
 		'dokan_setting_logo',
 		array(
-			'label'      => __( 'Logo', 'TEXT_DOMAIN' ),
+			'label'      => __( 'Logo', 'dokan' ),
 			'description' => 'Upload logo. Recommend logo size is 130 x 70',
 			'section'    => 'dokan_section_header',
 			'settings'   => 'dokan_setting_logo',
 		)
 	) );
 	
+	/*=====  End of HEADER  ======*/
+	
+	
 
-	/*----------  Megamenu styles  ----------*/
-	// Setting: Name.
+	/*================================
+	=            MEGAMENU            =
+	================================*/
 	$wp_customize->add_setting( 'dokan_setting_megamenu_style', array(
 		'type'                 => 'theme_mod',
 		'default'              => 'default',
 		'transport'            => 'refresh', 
 		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'wp_filter_nohtml_kses',
 	) );
 	
 	// Control: Name.
 	$wp_customize->add_control( 'dokan_setting_megamenu_style', array(
-		'label'       => __( 'Megamenu Style', 'TEXT_DOMAIN' ),
-		'description' => __( 'Choose the megamenu style you want', 'TEXT_DOMAIN' ),
+		'label'       => __( 'Megamenu Style', 'dokan' ),
+		'description' => __( 'Choose the megamenu style you want', 'dokan' ),
 		'section'     => 'dokan_section_megamenu',
 		'type'        => 'select',
 		'choices'  => array(
@@ -116,20 +131,26 @@ function dokan_customize_register( $wp_customize ){
 		'settings'    => 'dokan_setting_megamenu_style',
 	) );
 
+	/*=====  End of MEGAMENU  ======*/
+	
 
 
+	/*=======================================
+	=            HOMEPAGE SLIDER            =
+	=======================================*/
+	
 	/*----------  Homeapge slider  ----------*/
 	$wp_customize->add_setting( 'dokan_homepage_slider', array(
 		'type'                 => 'theme_mod',
 		'default'              => '0',
 		'transport'            => 'refresh', // Options: refresh or postMessage.
 		'capability'           => 'edit_theme_options',
-		
+		'sanitize_callback'    => 'wp_filter_nohtml_kses',
 	) );
 	
 	$wp_customize->add_control( 'dokan_homepage_slider', array(
-		'label'       => __( 'Enable Homepage Slider', 'TEXT_DOMAIN' ),
-		'description' => __( '', 'TEXT_DOMAIN' ),
+		'label'       => __( 'Enable Homepage Slider', 'dokan' ),
+		'description' => __( '', 'dokan' ),
 		'section'     => 'dokan_section_homepage',
 		'type'        => 'checkbox',
 		'settings'    => 'dokan_homepage_slider',
@@ -142,19 +163,26 @@ function dokan_customize_register( $wp_customize ){
 		'default'              => '0',
 		'transport'            => 'refresh', // Options: refresh or postMessage.
 		'capability'           => 'edit_theme_options',
-		
+		'sanitize_callback'    => 'wp_filter_nohtml_kses',
 	) );
 
-	$slider_list = get_masterslider_names( true );
+	if (function_exists( 'get_masterslider_names' ) ) {
+		$slider_list = get_masterslider_names( true );
+	}else{
+		$slider_list = array( 'Master slider is not active');
+	}
 
 	$wp_customize->add_control( 'dokan_homepage_slider_list', array(
-		'label'       => __( 'Select Homepage Slider', 'TEXT_DOMAIN' ),
-		'description' => __( '', 'TEXT_DOMAIN' ),
+		'label'       => __( 'Select Homepage Slider', 'dokan' ),
+		'description' => __( '', 'dokan' ),
 		'section'     => 'dokan_section_homepage',
 		'type'        => 'select', 
 		'choices'  => $slider_list,
 		'settings'    => 'dokan_homepage_slider_list',
 	) );
+	
+	/*=====  End of HOMEPAGE SLIDER  ======*/
+	
 	
 }
 add_action( 'customize_register', 'dokan_customize_register' );

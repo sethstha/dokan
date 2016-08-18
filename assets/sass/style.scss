@@ -5,7 +5,10 @@ Description: Modern minimal clean WooCommerce theme.
 Version: 1.0
 Author: Sanjeev Shrestha
 Author URI: http://sanjeevshrestha.me
-Tags: modern, woocommerce, e-commerce, ecommerce, clean
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: e-commerce, theme-options, full-width-template, featured-images, footer-widgets, footer-widgets, custom-logo, custom-header, grid-layout, left-sidebar, right-sidebar, one-column, two-columns, blog
+Text Domain: dokan
 */
 
 /*
@@ -57,7 +60,6 @@ Tags: modern, woocommerce, e-commerce, ecommerce, clean
 @import 'elements/grid';
 @import 'elements/list';
 @import 'elements/tables';
-@import 'elements/simple-line-icons';
 @import 'elements/titles';
 
 /*----------  Navigations  ----------*/
