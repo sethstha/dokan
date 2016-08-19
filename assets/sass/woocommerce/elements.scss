@@ -772,3 +772,49 @@
 }
 
 /*=====  End of Header mini-cart  ======*/
+
+/*=========================================
+=            WOOCOMMERCE LOGIN            =
+=========================================*/
+
+.woocommerce{
+	.login{
+		margin-bottom: 45px;
+		.input-text{
+			padding: 10px 15px;
+			border: 1px solid $color-gray-lighten;
+			outline: none;
+			display: block;
+			width: 40%;
+			background: white;
+			transition: border 300ms ease-in-out;
+
+			&:hover{
+				border: 1px solid $color-gray-lighter;
+			}
+
+			&:focus{
+				border: 1px solid $color-gray-light;
+			}
+		}
+
+		.button{
+			padding: 10px 15px;
+			background: $color-gray-dark;
+			color: $color-white;
+			display: block;
+			outline: none;
+			border: none;
+			text-transform: uppercase;
+			margin: 15px 0;
+			text-align: center;
+			text-decoration: none;
+
+			&:hover{
+				background: lighten($color-gray-dark, 10);
+			}
+		}
+	}
+}
+
+/*=====  End of WOOCOMMERCE LOGIN  ======*/

@@ -59,7 +59,22 @@ function dokan_customize_register( $wp_customize ){
 		'capability'     => 'edit_theme_options',
 	) );
 
+	/*----------  SOCIAL  ----------*/
+	$wp_customize->add_section( 'dokan_section_color', array(
+		'priority'       => 160,
+		'panel'          => 'dokan_panel_main',
+		'title'          => __( 'Colors', 'dokan' ),
+		'description'    => __( 'Change colors of several parts', 'dokan' ),
+		'capability'     => 'edit_theme_options',
+	) );
 
+
+	/**
+	 *
+	 * Controls
+	 *
+	 */
+	
 	/*==============================
 	=            HEADER            =
 	==============================*/
@@ -184,13 +199,100 @@ function dokan_customize_register( $wp_customize ){
 	/*=====  End of HOMEPAGE SLIDER  ======*/
 	
 	
+	/*==============================
+	=            COLORS            =
+	==============================*/
+	
+	// Setting: Header top color.
+	$wp_customize->add_setting( 'dokan_color_header_top', array(
+		'type'                 => 'theme_mod',
+		'default'              => '#1E1E1F',
+		'transport'            => 'postMessage', // Options: refresh or postMessage.
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'sanitize_hex_color',
+	) );
+	
+	// Control: Header top color.
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'dokan_color_header_top',
+		array(
+			'label'      => __( 'Header top color', 'dokan' ),
+			'section'    => 'dokan_section_color',
+			'settings'   => 'dokan_color_header_top',
+		)
+	) );
+
+	// Setting: Footer top color.
+	$wp_customize->add_setting( 'dokan_color_footer_top', array(
+		'type'                 => 'theme_mod',
+		'default'              => '#252525',
+		'transport'            => 'postMessage', // Options: refresh or postMessage.
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'sanitize_hex_color',
+	) );
+	
+	// Control: Footer top color.
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'dokan_color_footer_top',
+		array(
+			'label'      => __( 'Footer top color', 'dokan' ),
+			'section'    => 'dokan_section_color',
+			'settings'   => 'dokan_color_footer_top',
+		)
+	) );
+	
+	// Setting: Footer middle color.
+	$wp_customize->add_setting( 'dokan_color_footer_middle', array(
+		'type'                 => 'theme_mod',
+		'default'              => '#252525',
+		'transport'            => 'postMessage', // Options: refresh or postMessage.
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'sanitize_hex_color',
+	) );
+	
+	// Control: Footer middle color.
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'dokan_color_footer_middle',
+		array(
+			'label'      => __( 'Footer middle color', 'dokan' ),
+			'section'    => 'dokan_section_color',
+			'settings'   => 'dokan_color_footer_middle',
+		)
+	) );
+
+
+	// Setting: Footer bottom color.
+	$wp_customize->add_setting( 'dokan_color_footer_bottom', array(
+		'type'                 => 'theme_mod',
+		'default'              => '#000000',
+		'transport'            => 'postMessage', // Options: refresh or postMessage.
+		'capability'           => 'edit_theme_options',
+		'sanitize_callback'    => 'sanitize_hex_color',
+	) );
+	
+	// Control: Footer bottom color.
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'dokan_color_footer_bottom',
+		array(
+			'label'      => __( 'Footer bottom color', 'dokan' ),
+			'section'    => 'dokan_section_color',
+			'settings'   => 'dokan_color_footer_bottom',
+		)
+	) );
+
+	/*=====  End of COLORS  ======*/
+	
 }
 add_action( 'customize_register', 'dokan_customize_register' );
 
 
 /*----------  Enqueue Customizer JS  ----------*/
 function dokan_customizer_js() {
-	wp_enqueue_script( 'customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview', 'jquery' ) );
+	wp_enqueue_script( 'dokan-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview', 'jquery' ), '1.0', true );
 }
 add_action( 'customize_preview_init', 'dokan_customizer_js' );
 ?>

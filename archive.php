@@ -8,24 +8,24 @@
  */
 
 get_header(); ?>
-
+<div class="container">
 	<div class="row">
-		<div id="primary" class="content-area col-md-9">
+	<div id="primary" class="content-area col-md-9">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
+				<header class="page-header">
+					<?php
 					the_archive_title( '<h3 class="page-title">', '</h3>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+					?>
+				</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
+					<?php
 
 					/*
 					 * Include the Post-Format-specific template for the content.
@@ -33,22 +33,21 @@ get_header(); ?>
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					get_template_part( 'template-parts/content', get_post_format() );
-				?>
+					?>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+				<?php the_posts_navigation(); ?>
 
-		<?php else : ?>
+			<?php else : ?>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		<?php endif; ?>
+			<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 	<?php get_sidebar(); ?>
-
-</div> <!-- end row -->
+</div><!-- end row -->
+</div><!-- end container -->
 <?php get_footer(); ?>

@@ -9,9 +9,12 @@
  * @package Dokan
  */
 
-?>
-			</div> <!-- end row -->
-		</div><!-- end container -->
+?>		<?php if ( class_exists( 'WooCommerce' ) ): ?>
+			<?php if ( is_woocommerce() ): ?>
+					</div><!-- end row -->
+				</div><!-- end container -->
+			<?php endif ?>
+		<?php endif ?>
 	</section> <!-- end main-content -->
 
 	<footer class="footer-main">

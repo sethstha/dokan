@@ -73,7 +73,7 @@ function dokan_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'dokan_custom_background_args', array(
-		'default-color' => 'f8f8f8',
+		'default-color' => '#f8f8f8',
 	) ) );
 
 	add_theme_support( 'woocommerce' );
@@ -177,6 +177,40 @@ function dokan_add_editor_styles(){
 }
 add_action( 'init', 'dokan_add_editor_styles' );
 
+
+
+/**
+ *
+ * Add color styles in the header
+ *
+ */
+
+function dokan_add_theme_styles(){
+	$color_header_top = get_theme_mod( 'dokan_color_header_top', '#1E1E1F' );
+	$color_footer_top = get_theme_mod( 'dokan_color_footer_top', '#252525' );
+	$color_footer_middle = get_theme_mod( 'dokan_color_footer_middle', '#252525' );
+	$color_footer_bottom = get_theme_mod( 'dokan_color_footer_bottom', '#000000' );
+	?>
+	<style id="dokan-styles" type="text/css">
+		.header-top{
+			background: <?php echo $color_header_top; ?>;
+		}
+
+		.footer-top{
+			background: <?php echo $color_footer_top; ?>;
+		}
+
+		.footer-middle{
+			background: <?php echo $color_footer_middle; ?>;
+		}
+
+		.footer-bottom{
+			background: <?php echo $color_footer_bottom; ?>;
+		}
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'dokan_add_theme_styles' );
 /**
  *
  * Custom image size

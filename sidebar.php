@@ -19,7 +19,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 </div><!-- end sidebar-button-toggler -->
 <?php if (is_shop() || is_product_category() || is_product()): ?>
 	<div id="secondary" class="widget-area col-md-3" role="complementary">
-		<?php dynamic_sidebar( 'sanjeev-sidebar-shop' ); ?>
+		<?php dynamic_sidebar( 'dokan-sidebar-shop' ); ?>
 	</div><!-- #secondary -->
 	
 <?php else: ?>

@@ -1,23 +1,13 @@
 <?php
 /**
- * Template for create new Widget
  *
- * use Action Hook 'widgets_init' for register.
- * @see http://codex.wordpress.org/Widgets_API#Developing_Widgets
+ * Social Widget 
+ * @author: Sanjeev Shrestha
+ * @package: dokan
  *
- * This below '@param' is used in WP_Widget::__construct().
- *
- * @param string          Optional Base ID for the widget, lowercase and unique. If left empty,
- *                                a portion of the widget's class name will be used Has to be unique.
- * @param string             Name for the widget displayed on the configuration page.
- * @param array    Optional. Widget options. See {@see wp_register_sidebar_widget() for
- *                                information on accepted arguments. Default empty array.
- * @param array   Optional. Widget control options. See {@see wp_register_widget_control()}
- *                                for information on accepted arguments. Default empty array.
  */
 
-
-class Class_Name_Widget extends WP_Widget {
+class Dokan_social_Widget extends WP_Widget {
 
     /**
      * Register widget with WordPress.
@@ -25,14 +15,14 @@ class Class_Name_Widget extends WP_Widget {
     public function __construct() {
 
         $widget_options = array(
-            'description' => __( 'Widget Description', 'dokan' )
+            'description' => __( 'Social widget for the dokan theme.', 'dokan' )
         );
 
         $control_options = array();
 
         parent::__construct(
             'social-links',
-            'Social',
+            'Dokan Social Widget',
             $widget_options,
             $control_options
         );
@@ -73,7 +63,6 @@ class Class_Name_Widget extends WP_Widget {
     public function form( $instance ) {
          $instance = wp_parse_args( (array) $instance, array( 
             'dokan_title' => '',
-            'dokan_description' => '',
             'dokan_facebook' => '',
             'dokan_twitter' => '',
             'dokan_tumblr' => '',
@@ -84,9 +73,6 @@ class Class_Name_Widget extends WP_Widget {
         <p>
             <label for="<?php echo $this->get_field_id( 'dokan_title' ) ?>">Title</label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id( 'dokan_title' ) ?>" name ="<?php echo $this->get_field_name ('dokan_title') ?>" value ="<?php echo esc_attr ($instance['dokan_title']) ?>">
-            
-            <label for="<?php echo $this->get_field_id( 'dokan_description' ) ?>">Description</label>
-            <textarea type="text" class="widefat" id="<?php echo $this->get_field_id( 'dokan_description' ) ?>" name ="<?php echo $this->get_field_name ('dokan_description') ?>" value =""><?php echo esc_attr ($instance['dokan_description']) ?></textarea>
         </p>
         <p>
             <label for="<?php echo $this->get_field_id( 'dokan_facebook' ) ?>">Facebook Username</label>
@@ -116,19 +102,16 @@ class Class_Name_Widget extends WP_Widget {
      */
     public function update( $new_instance, $old_instance ) {
         $updated_instance = $new_instance;
-        $updated_instance['dokan_title'] = strip_tags($new_instance ['dokan_title']);
-        $updated_instance['dokan_description'] = strip_tags($new_instance ['dokan_description']);
-        $updated_instance['dokan_facebook'] = strip_tags($new_instance ['dokan_facebook']);
-        $updated_instance['dokan_twitter'] = strip_tags($new_instance ['dokan_twitter']);
-        $updated_instance['dokan_tumblr'] = strip_tags($new_instance ['dokan_tumblr']);
-        $updated_instance['dokan_instagram'] = strip_tags($new_instance ['dokan_instagram']);
+        foreach ($new_instance as $new_inst) {
+            $updated_instance[] = strip_tags($new_inst);
+        }
      
         return $updated_instance;
     }
 }
 
 add_action( 'widgets_init', function() {
-    register_widget( 'Class_Name_Widget' );
+    register_widget( 'Dokan_social_Widget' );
 } );
 
 ?>
